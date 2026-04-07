@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  server:
+    image: tema_2
+    container_name: server
+    volumes:
+      - ./capitolulX4/app:/app
+    networks:
+      - retea_tema
+    tty: true
+    stdin_open: true
+
+  client:
+    image: tema_2
+    container_name: client
+    volumes:
+      - ./capitolulX4/app:/app
+    networks:
+      - retea_tema
+    tty: true
+    stdin_open: true
+
+networks:
+  retea_tema:
+    driver: bridge
