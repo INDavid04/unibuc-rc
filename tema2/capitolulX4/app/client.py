@@ -11,7 +11,9 @@ MESSAGE = "Salut de la Irimia David"
 
 try:
     # Crează pachetul IP
-    packet = IP(dst=SERVER_IP) / UDP(dport=SERVER_PORT) / Raw(load=MESSAGE)
+    # EX4. La construirea pachetului, pe stratul UDP, adaugă sport=12345
+    # EX5. Pune in pachet IP(src="IP-ul aflat", dst=SERVER_IP) + același sport ca la pasul anterior
+    packet = IP(src="8.8.8.8", dst=SERVER_IP) / UDP(sport=12345, dport=SERVER_PORT) / Raw(load=MESSAGE)
 
     # Trimite pachetul
     print(f"Trimit pachet UDP către {SERVER_IP}:{SERVER_PORT}...")
