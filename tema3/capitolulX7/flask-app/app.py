@@ -17,7 +17,7 @@ def hello():
     <html>
     <head><title>Flask pe Kubernetes</title></head>
     <body style="font-family: Arial, sans-serif; text-align: center; padding: 60px; background: #f0f4f8;">
-        <h1 style="color: #326ce5;">&#9096; Hello from Kubernetes!</h1>
+        <h1 style="color: #326ce5;">&#9096; Hello from Kubernetes - v2!</h1>
         <div style="background: white; border-radius: 8px; padding: 30px; display: inline-block; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
             <p><strong>Pod:</strong> <code style="background:#eef;padding:2px 6px;border-radius:4px;">{pod_name}</code></p>
             <p><strong>Node:</strong> <code style="background:#eef;padding:2px 6px;border-radius:4px;">{node_name}</code></p>

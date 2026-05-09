@@ -1,0 +1,8 @@
+flask-deployment-7ccc966cb-8qq4d
+flask-deployment-7ccc966cb-gvh46
+flask-deployment-7ccc966cb-hnd4m
+
+flask-deployment-7ccc966cb-hnd4m e inlocuit de flask-deployment-7ccc966cb-qg6l8
+
+Crearea noului pod a durat 26s
+Fara kubernetes operatiunea ar fi necesitat interventie umana

@@ -38,7 +38,7 @@ spec:
       containers:
       - name: flask-container
         # Imaginea Docker pe care am construit-o local și am încărcat-o cu "kind load"
-        image: my-flask-app:v1
+        image: my-flask-app:v2
 
         # Nu descărca imaginea de pe internet — folosește ce e deja pe nod.
         # Fără acest flag, Kubernetes ar încerca Docker Hub și ar eșua (ImagePullBackOff).
