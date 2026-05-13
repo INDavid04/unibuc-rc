@@ -1,4 +1,9 @@
-version: '3.8'
+# Capitolul 0: https://networks.hypha.ro/capitolul0/
+
+# version: '3.8' # linie comentata pentru a scapa de warningul urmator: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion
+
+# Exercitiul 1
+# Modificați docker compose.yml pentru a adaugă încă o rețea și încă 3 containere atașate la rețeaua respectivă. Modificați definiția container-ului rt1 pentru a face parte din ambele rețele.
 
 services:
     rt1:
@@ -8,6 +13,7 @@ services:
         tty: true
         networks:
             - dmz
+            - net # rt1 face parte din ambele retele
         sysctls:
           - net.ipv4.icmp_echo_ignore_broadcasts=0
     rt2:
@@ -28,5 +34,43 @@ services:
             - dmz
         sysctls:
           - net.ipv4.icmp_echo_ignore_broadcasts=0
+    pc1:
+        image: snisioi/retele:2021
+        volumes:
+            - .:/elocal
+        tty: true
+        networks:
+            - net
+        sysctls:
+          - net.ipv4.icmp_echo_ignore_broadcasts=0
+    pc2:
+        image: snisioi/retele:2021
+        volumes:
+            - .:/elocal
+        tty: true
+        networks:
+            - net
+        sysctls:
+          - net.ipv4.icmp_echo_ignore_broadcasts=0
+    pc3:
+        image: snisioi/retele:2021
+        volumes:
+            - .:/elocal
+        tty: true
+        networks:
+            - net
+        sysctls:
+          - net.ipv4.icmp_echo_ignore_broadcasts=0
 networks:
-    dmz: {}
+    dmz:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.111.0.0/16
+                  gateway: 172.111.111.1
+    net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 198.13.0.0/16
+                  gateway: 198.13.13.1
